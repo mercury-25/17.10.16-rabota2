@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="HelloWorldApp">
+<head>
+	<meta charset="UTF-8">
+    <title>hello</title>
+
+   
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	
+	<script>
+	var app = angular.module("HelloWorldApp", []);
+	
+	app.controller("HelloWorldAppCtrl", function ($scope){
+	
+	$scope.styleObj = {
+	  color:"red",
+	  padding:"10px",
+	  border:"1px solid green",
+	  marginTop:"50px"
+	  };
+	
+	
+	});
+	</script>
+	
+	
+</head>
+<body ng-controller="HelloWorldAppCtrl">
+
+  <div class="container">
+  
+
+   
+   <div ng-style="styleObj">Test</div>
+	
+   </div>
+  </body>
+</html>
