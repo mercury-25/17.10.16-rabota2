@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="HelloWorldApp">
+<head>
+	<meta charset="UTF-8">
+    <title>hello</title>
+
+   
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	
+	<script>
+	var app = angular.module("HelloWorldApp", []);
+	
+	app.controller("HelloWorldAppCtrl", function ($scope){
+	
+	$scope.selectedClass = "lightGreen";
+	
+	$scope.classNames = [{displayName: "LIght Green",value: "lightGreen"},
+	{displayName: "LIght Blue",value: "lightBlue"},
+	{displayName: "LIght Coral",value: "lightCoral"}];
+	});
+	</script>
+	
+	<style>
+	  .lightGreen{
+	  background-color: lightgreen;
+	  }
+	  .lightBlue{
+	  background-color: lightblue;
+	  }
+	  .lightCoral{
+	  background-color: lightcoral;
+	  }
+	  .test-div {
+	  border:1px solid black;
+	  width:100px;
+	  height:100px;
+	  padding:10px;
+	  }
+	</style>
+</head>
+<body ng-controller="HelloWorldAppCtrl">
+
+  <div class="container">
+  
+    <div class="row well">
+	   <div class="radio" ng-repeat="item in classNames">
+	     <label>
+		   <input type="radio" name="color" ng-model="$parent.selectedClass" value="{{item.value}}"/>{{item.displayName}}
+		 </label>
+	   </div>
+	</div>
+	
+	
+	<div class="test-div" ng-class="selectedClass">{{selectedClass}}</div>
+	
+   </div>
+  </body>
+</html>
